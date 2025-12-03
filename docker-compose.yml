@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  mongo-habit:
+    image: mongo:7
+    container_name: mongo-habit
+    restart: unless-stopped
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongo_habit_data:/data/db
+
+  habit-backend:
+    build:
+      context: ./habit-tracker-backend
+    container_name: habit-backend
+    command: npm run dev
+    environment:
+      - MONGO_URL=mongodb://mongo-habit:27017/habitTracker
+      - JWT_SECRET=supersecretjwt
+      - CLIENT_URL=http://localhost:5174
+      - PORT=5002
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mongo-habit
+    volumes:
+      - ./habit-tracker-backend:/app
+      - /app/node_modules
+
+  habit-frontend:
+    build:
+      context: ./habit-tracker-frontend
+    container_name: habit-frontend
+    command: npm run dev -- --host 0.0.0.0 --port 5174
+    ports:
+      - "5174:5174"
+    depends_on:
+      - habit-backend
+    volumes:
+      - ./habit-tracker-frontend:/app
+      - /app/node_modules
+
+volumes:
+  mongo_habit_data:
