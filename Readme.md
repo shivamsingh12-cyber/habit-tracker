@@ -1,4 +1,4 @@
-# 🔥 Real-Time Habit Tracker App
+# 🔥 Habit Tracker App
 A collaborative habit-tracking platform where users create habits, perform daily check-ins, and see real-time updates across groups using Socket.io.
 
 Designed as a simple but powerful clone of HabitShare — perfect for demonstrating real-time features in interviews.
