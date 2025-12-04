@@ -11,8 +11,7 @@ services:
       - mongo_habit_data:/data/db
 
   habit-backend:
-    build:
-      context: ./habit-tracker-backend
+    image: shivamsingh6490/habit-backend:dev
     container_name: habit-backend
     command: npm run dev
     environment:
@@ -29,8 +28,7 @@ services:
       - /app/node_modules
 
   habit-frontend:
-    build:
-      context: ./habit-tracker-frontend
+    image: shivamsingh6490/habit-frontend:dev
     container_name: habit-frontend
     command: npm run dev -- --host 0.0.0.0 --port 5174
     ports:
