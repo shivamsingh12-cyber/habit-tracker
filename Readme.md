@@ -42,4 +42,30 @@ root/
 │
 └── docker-compose.yml
 ```
+# ⚙️ Installation (Local Development)
+ 1. Clone the repository
+    * git clone <repo-url>
+    * cd <repo-folder>
+ 2. Install backend dependencies
+    * cd habit-tracker-backend
+    * npm install
+ 3. Install frontend dependencies
+    * cd habit-tracker-frontend
+    * npm install
+ 4. Environment Variables
+ * Create habit-tracker-backend/.env
+- MONGO_URL=mongodb://mongo-habit:27017/habitTracker
+- JWT_SECRET=****
+- CLIENT_URL=http://localhost:5174
+- PORT=your_port
+
+ 4. Start frontend and backend with
+    * npm run dev
+
+## Running with docker
+ * From root folder
+    ```bash
+    docker compose up --build
+    docker compose down
+    ```
 
