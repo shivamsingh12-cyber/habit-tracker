@@ -1,7 +1,8 @@
 # 🔥 Habit Tracker App
-A collaborative habit-tracking platform where users create habits, perform daily check-ins, and see real-time updates across groups using Socket.io.
+A clean and minimal habit-tracking web app where users create habits, mark daily check-ins, and track their streaks over time.
+Designed to showcase a complete full-stack workflow including authentication, protected routes, habit CRUD operations, and daily progress tracking.
 
-Designed as a simple but powerful clone of HabitShare — perfect for demonstrating real-time features in interviews.
+This project is intentionally lightweight — ideal for interviews where you need to demonstrate clear backend logic and frontend state management without unnecessary complexity.
 
 ## 🚀 Features
 - Register & login (JWT-based)
