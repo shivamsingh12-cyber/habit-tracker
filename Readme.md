@@ -13,7 +13,7 @@ This project is intentionally lightweight — ideal for interviews where you nee
 
 - Track streaks automatically
 
-- See check-ins of group members
+- See check-ins 
 
 - View habit analytics
 
